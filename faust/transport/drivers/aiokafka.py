@@ -803,6 +803,7 @@ class AIOKafkaConsumerThread(ConsumerThread):
                             # AIOKAFKA IS FETCHING AND STREAM IS PROCESSING
                             # BUT WE HAVE NOT COMMITTED ANYTHING SINCE WORKER
                             # START.
+                            self.log.error(self.tp_last_committed_at)
                             self._log_slow_processing_commit(
                                 SLOW_PROCESSING_NO_COMMIT_SINCE_START,
                                 tp,
