@@ -816,6 +816,7 @@ class AIOKafkaConsumerThread(ConsumerThread):
                             # AIOKAFKA IS FETCHING AND STREAM IS PROCESSING
                             # BUT WE HAVE NOT COMITTED ANYTHING IN A WHILE
                             # (commit offset is not advancing).
+                            self.log.error(self.tp_last_committed_at)
                             self._log_slow_processing_commit(
                                 SLOW_PROCESSING_NO_RECENT_COMMIT,
                                 tp,
